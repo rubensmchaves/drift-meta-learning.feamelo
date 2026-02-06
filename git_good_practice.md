@@ -70,7 +70,7 @@ git push origin feature/add-cool-thing
 
 # 8. Update your PR if needed (after feedback)
 
-Just commit more to the same branch and push -the PR updates automatically.
+Just commit more to the same branch and push, the PR updates automatically.
 
 # 9. After merge (or if you just want to keep your fork updated)
 
