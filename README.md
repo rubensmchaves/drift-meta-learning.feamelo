@@ -33,7 +33,7 @@ The objective is to perform drift detection using meta learning by predicting th
 ## 2. Running
 To work on this project is important to read the git good practive guide first, [here](https://github.com/rubensmchaves/drift-meta-learning.feamelo/blob/main/git_good_practice.md).
 
-1. Set a local environment, using venv. Check the W3School tutorial [here](https://www.w3schools.com/python/python_virtualenv.asp).
+1. Set a local environment, using `venv` module. Check the W3School tutorial [here](https://www.w3schools.com/python/python_virtualenv.asp).
 2. Install the required libraries.
 3. Run the project locally.
 
