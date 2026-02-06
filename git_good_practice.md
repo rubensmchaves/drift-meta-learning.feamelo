@@ -34,7 +34,7 @@ git remote add upstream https://github.com/original-owner/repo-name.git
 git remote -v     # verify: origin→ your fork, upstream → original
 ```
 
-# 4.Sync yoour fork with upstream regularly (very important!)
+# 4.Sync your fork with upstream regularly (very important!)
 ```
 git fetch upstream
 git checkout main           # or master, depending on the default branch
