@@ -6,13 +6,14 @@ import sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import TimeSeriesSplit
+from sklearn.metrics import get_scorer_names
 
 
 # Macros
 DEFAULT_N_FOLDS = 5
 DEFAULT_MODEL = RandomForestClassifier
 DEFAULT_SCORING_STRATEGY = "max"
-SCORING_METRICS = sklearn.metrics.SCORERS.keys()
+SCORING_METRICS = get_scorer_names()
 DEFAULT_METRIC = "precision"
 SCORING_STRATEGIES = ["max", "min"]
 DEFAULT_CROSS_VAL_TYPE = "time_series"
