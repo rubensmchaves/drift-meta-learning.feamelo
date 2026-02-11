@@ -1,4 +1,9 @@
+# Ignore the virtual enviroment folder (Fernanda)
 venv
+# Ignore the virtual enviroment folder for a minimal library load: 'minimal_env' (Rubens)
+minimal_env
+# Ignore the virtual enviroment folder 'myenv' (Rubens)
+myenv
 *.DS_Store
 *__pycache__
 *arff
