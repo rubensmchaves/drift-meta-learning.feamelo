@@ -64,3 +64,47 @@ Installing the required libraries through the file `requeriments.txt`. At you pr
 ```$ pip install -r requirements.txt```
 
 ### 2.4 Executing 
+
+
+## 3. Troubleshooting
+
+###  3.1 Building `wheel` for [...] did not run successfully.
+This error is a classic "expert-level" hurdle in Linux. The problem isn't your Python code; it's that your **WSL/Ubuntu** environment is missing the **C/C++ compilers** and **system development libraries** needed to build certain Python packages (like `cffi`, `kiwisolver`, and `Pillow`) from source.
+
+The error logs highlight three main missing pieces:
+
+1. `x86_64-linux-gnu-gcc` **not found**: You don't have the C compiler.
+2. `libffi` **not found**: Missing the Foreign Function Interface library.
+3. `zlib` **not found**: Missing the compression library required for image processing in `Pillow`.
+
+Many Machine Learning libraries (especially older versions or specific research forks) don't provide "Wheels" (pre-compiled binaries) for every single version of Python (you are using **Python 3.12**). When a Wheel isn't available, `pip` tries to build the package from the source code, which requires a C compiler and system libraries to be present on your Linux machine.
+
+#### The Solution: Install System Dependencies
+To fix this for your **Meta-Learning** project, you need to use `sudo` to install the essential build tools and specific header files. Run the following command in your terminal:
+
+```sudo apt update && sudo apt install -y build-essential libffi-dev python3-dev zlib1g-dev libjpeg-dev```
+
+Breakdown of what this does:
+* `build-essential`: Installs `gcc`, `g++`, and `make`. This solves the "No such file or directory" error for the compiler.
+* `libffi-dev`: Provides the headers for `cffi`.
+* `python3-dev`: Provides the header files for Python C extensions.
+* `zlib1g-dev` & `libjpeg-dev`: Essential for compiling `Pillow` so it can handle compressed images.
+
+#### Step-by-Step Recovery
+Once the system packages are installed, try to install your project again. It is often best to clear the "failed" state in your virtual environment:
+
+1. Activate your environment (if not already):
+
+```source .venv/bin/activate```
+
+2. Upgrade `pip`, `setuptools`, and `wheel`: This ensures you have the latest building logic.
+
+```pip install --upgrade pip setuptools wheel```
+
+3. Re-run your installation:
+
+```
+pip install -r requirements.txt
+# OR, if you are installing the current folder:
+pip install -e .
+```
