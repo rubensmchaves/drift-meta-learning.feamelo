@@ -38,11 +38,13 @@ To work on this project is important to read the git good practive guide first, 
 5. Close the local environment
 
 ### 2.1 Clone the project
-It is important to note that, if you are using Windows this project has files with special character like ":" in its name. So, if you use the WSL (Windows Subsystem for Linux), otherwise you are going to have problem to checkout the project.
+Because this project includes files with colons (:) in their names, you must use Linux or subsystem for Linux (_i.e._, WSL) to successfully check out the repository.
 
 The checkout command:
 
 ```$ git clone [git_project_url]```
+
+_Tip_: Use SSH, because with seamless authentication, once configured, you never have to type a password or token again. You can pull, push, and fetch effortlessly. For more details click [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
 ### 2.2 Local environment
 Setting your local environment using the module `venv`. Execute only once, when you set your project for the first time. We suggest to name you local enviroment as `myenv`.
