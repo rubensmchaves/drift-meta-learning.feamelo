@@ -47,9 +47,9 @@ The checkout command:
 _Tip_: Use SSH, because with seamless authentication, once configured, you never have to type a password or token again. You can pull, push, and fetch effortlessly. For more details click [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
 ### 2.2 Local environment
-Setting your local environment using the module `venv`. Execute only once, when you set your project for the first time. We suggest to name you local enviroment as `myenv`.
+Setting your local environment using the module `venv`. Execute only once, when you set your project for the first time. We suggest to name you local enviroment as `.venv`.
 
-```$ python -m venv myenv```
+```$ python -m venv .venv```
 
 Once it is done, verify the prefix `.venv` (your local environment name) at the command prompt, something like:
 
