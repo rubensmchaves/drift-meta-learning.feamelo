@@ -1,8 +1,6 @@
 # Drift meta learning
 
-Master's thesis in Computer Science at the University of Brasília ([PPGI](http://ppgi.unb.br)).
-
-The objective is to perform drift detection using meta learning by predicting the performance of a base model (regression or classification) with unknown target.
+The objective is to perform drift detection using meta learning by predicting the performance of a base classification model with unknown target (delayed).
 
 ## 1. To Do
 - [x] Offline stage MetaLearner implementation
@@ -24,8 +22,8 @@ The objective is to perform drift detection using meta learning by predicting th
 - [ ] Meta feature selection experiments
 - [x] Baseline
 - [x] Evaluation metrics for meta model vs baseline
-- [ ] Drift alert definition
-- [ ] Drift alert configuration
+- [x] Drift alert definition
+- [x] Drift alert configuration
 - [x] Code documentation
 - [ ] Readme
 - [x] Experiments notebooks adjustments to fit new MetaLearner structure
@@ -37,6 +35,7 @@ To work on this project is important to read the git good practive guide first, 
 2. Set a local environment, using `venv` module. Check the W3School tutorial [here](https://www.w3schools.com/python/python_virtualenv.asp).
 3. Install the required libraries.
 4. Run the project locally.
+5. Close the local environment
 
 ### 2.1 Clone the project
 It is important to note that, if you are using Windows this project has files with special character like ":" in its name. So, if you use the WSL (Windows Subsystem for Linux), otherwise you are going to have problem to checkout the project.
@@ -50,21 +49,24 @@ Setting your local environment using the module `venv`. Execute only once, when 
 
 ```$ python -m venv myenv```
 
-Once it is done, verify the prefix `myenv` (your local environment name) at the command prompt, something like:
+Once it is done, verify the prefix `.venv` (your local environment name) at the command prompt, something like:
 
-```(myenv) feamelo@my_computer:/$```
+```(.venv) feamelo@my_computer:/$```
 
 If it is not there, start your environment with the command:
 
-```$ source myenv/bin/activate```
+```$ source .venv/bin/activate```
 
 ### 2.3 Required libraries
 Installing the required libraries through the file `requeriments.txt`. At you project root type:
 
-```$ pip install -r requirements.txt```
+```$ pip install -r requirements-minimal.txt```
 
 ### 2.4 Executing 
 
+### 2.5 Close the local environment 
+Just run the `venv` command:
+```$ deactivate```
 
 ## 3. Troubleshooting
 
